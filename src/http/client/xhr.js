@@ -18,7 +18,7 @@ export default function (request) {
                     statusText: xhr.status === 1223 ? 'No Content' : trim(xhr.statusText)
                 }
             );
-
+            console.log(trim(xhr.getAllResponseHeaders()));
             each(trim(xhr.getAllResponseHeaders()).split('\n'), row => {
                 response.headers.append(row.slice(0, row.indexOf(':')), row.slice(row.indexOf(':') + 1));
             });
